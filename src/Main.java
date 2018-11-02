@@ -10,13 +10,13 @@ public class Main {
 
 
     public static void main(String[] args) {
-        System.out.println("ahello");
+
         Main m = new Main();
 
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-//                LandingPage l= new LandingPage();
+                LandingPage l= new LandingPage();
 
             }
         });
