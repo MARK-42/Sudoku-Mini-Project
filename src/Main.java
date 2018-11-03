@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-//wwehlewljk
+
         Main m = new Main();
 
         SwingUtilities.invokeLater(new Runnable() {
