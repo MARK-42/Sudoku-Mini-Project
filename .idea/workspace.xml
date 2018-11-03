@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="210ae3b7-73bb-4f91-85a7-e8a62820ab9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Sudoku-Mini-Project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/sudoku .jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sudoku .jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/CreateGrid.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/CreateGrid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/LandingPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/LandingPage$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/LandingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/LandingPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/mainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/mainFrame$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/mainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/mainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/sudoku.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Sudoku-Mini-Project/sudoku1.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LandingPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku1.jpeg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,32 +29,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/gameFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LandingPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+            <state relative-caret-position="344">
+              <caret line="37" column="10" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sudoku .jpeg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sudoku1.jpeg">
-          <provider selected="true" editor-type-id="images" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/gameFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -110,6 +89,11 @@
               <item name="Sudoku-Mini-Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Sudoku-Mini-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sudoku-Mini-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="UML" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -118,11 +102,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541247875520" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541253873463" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -164,7 +149,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
@@ -172,7 +157,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.14997233" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15063925" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" weight="0.32937366" />
       <window_info anchor="bottom" id="Terminal" weight="0.32937366" />
@@ -180,7 +165,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.32937366" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32937366" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33553356" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -241,15 +226,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LandingPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        <state relative-caret-position="344">
+          <caret line="37" column="10" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gameFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        <state relative-caret-position="240">
+          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
         </state>
       </provider>
     </entry>
