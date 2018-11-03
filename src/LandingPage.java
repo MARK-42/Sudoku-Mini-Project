@@ -36,7 +36,7 @@ public class LandingPage extends JFrame {
 
         setVisible(true);
         //setSize(600, 600);
-        setBounds(600,300,600,600);
+        setBounds(400,100,600,600);
         setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.weightx = 4;

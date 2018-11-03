@@ -9,7 +9,7 @@ class mainFrame extends JFrame
     {
         JFrame gameFrame = new JFrame("SUDOKU");
         gameFrame.setLayout(null);
-        gameFrame.setBounds(600, 300, 600, 600);
+        gameFrame.setBounds(400, 100, 600, 600);
         gameFrame.setVisible(true);
         gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Container c=gameFrame.getContentPane();
@@ -59,7 +59,7 @@ class mainFrame extends JFrame
         solution.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                q.setText("                        Coming Soon ...");
+                q.setText("                             Coming Soon ...");
 
             }
         });
