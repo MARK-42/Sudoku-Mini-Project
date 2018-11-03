@@ -1,11 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 class mainFrame extends JFrame
 {
     mainFrame()
     {
-        JFrame gameFrame = new JFrame("                                                                      SUDOku");
+        JFrame gameFrame = new JFrame("SUDOKU");
         gameFrame.setLayout(null);
         gameFrame.setBounds(30, 30, 600, 600);
         gameFrame.setVisible(true);
@@ -13,7 +15,15 @@ class mainFrame extends JFrame
         Container c=gameFrame.getContentPane();
         JTextField grid[][] = new JTextField[9][9];
         CreateGrid cg=new CreateGrid(c,grid);
-        JButton newgame=new JButton("NewGame");
+        JButton newgame=new JButton("Back");
+        newgame.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                setVisible(false);
+                LandingPage lp=new LandingPage();
+            }
+        });
         JButton solution=new JButton("SOLUTION");
         JButton exit=new JButton("EXIT");
         newgame.setBounds(45,500,120,50);
@@ -33,12 +43,15 @@ class mainFrame extends JFrame
         invalid.setVisible(false);
         gameFrame.add(invalid);
         invalid.setForeground(Color.RED);
-        c.setBackground(Color.CYAN);
-        JLabel q=new JLabel("To be simPle is aS haRd As solVing a WRoNg suDoKu!");
+        c.setBackground(new Color(252, 236, 196));
+        JLabel q=new JLabel("                        The Game is on !!!");
         q.setBounds(115,20,500,30);
         q.setFont(f1);
         c.add(q);
     }
+
+
+
 
 }
 
@@ -53,7 +66,7 @@ class CreateGrid
                 grid[i][j]=new JTextField();
                 grid[i][j].setBounds((105+(40*j)+2),(75+(40*i)+2),40,40);
                 c.add(grid[i][j]);
-                grid[i][j].setBackground(Color.LIGHT_GRAY);
+                grid[i][j].setBackground(new Color(255, 248, 216));
                 Font f=new Font("Arial",Font.BOLD,18);
                 grid[i][j].setFont(f);
             }

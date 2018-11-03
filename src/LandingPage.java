@@ -17,10 +17,10 @@ public class LandingPage extends JFrame {
 
     public LandingPage() {
         super("Sudoku");
-        start = new JButton("Start");
-        img1 = new ImageIcon(getClass().getResource("sudoku.jpeg"));
+        start = new JButton("Go");
+        img1 = new ImageIcon(getClass().getResource("sudoku1.jpeg"));
         pic = new JLabel(img1);
-        difficulty = new JLabel("Choose Difficulty:");
+        difficulty = new JLabel("Difficulty:");
         diff = new JComboBox(levels);
         title = new JLabel("SUDOKU");
 
@@ -35,7 +35,7 @@ public class LandingPage extends JFrame {
 //        );
 
         setVisible(true);
-        setSize(800, 700);
+        setSize(600, 600);
 
         setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
