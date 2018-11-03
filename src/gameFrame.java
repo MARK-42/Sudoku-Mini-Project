@@ -15,13 +15,15 @@ class mainFrame extends JFrame
         Container c=gameFrame.getContentPane();
         JTextField grid[][] = new JTextField[9][9];
         CreateGrid cg=new CreateGrid(c,grid);
-        JButton newgame=new JButton("Back");
+        JButton newgame=new JButton("NewGame");
         newgame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gameFrame.setVisible(false);
-                setVisible(false);
-                LandingPage lp=new LandingPage();
+                int result =JOptionPane.showConfirmDialog(gameFrame, "Do you want to start a new Game ?","PLease confirm ", JOptionPane.YES_NO_OPTION);
+                if(result == JOptionPane.YES_OPTION) {
+                    gameFrame.setVisible(false);
+                    LandingPage lp=new LandingPage();
+                }
             }
         });
         JButton solution=new JButton("SOLUTION");
