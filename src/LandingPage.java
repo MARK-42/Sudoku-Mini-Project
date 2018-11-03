@@ -70,15 +70,15 @@ public class LandingPage extends JFrame {
         c.gridy = 4;
         add(start, c);
 
-//
-//        start.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//
-//                setVisible(false);
-//                Game m = new Game();
-//            }
-//        });
+
+        start.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                setVisible(false);
+                mainFrame frame=new mainFrame();
+            }
+        });
 
 
     }
