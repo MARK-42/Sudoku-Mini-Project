@@ -4,19 +4,15 @@ public class SetGameBoard {
     private int[][] sudokuBoxElementArray;
 
     SetGameBoard(){
-        sudokuBoxElementArray = new int[9][9];
-        int i,j;
-        for(i=0;i<9;i++)
-        {
-            for(j=0;j<9;j++)
-            {
-                sudokuBoxElementArray[i][j]=0;
-            }
-        }
+       Algo sa=new Algo();
+       sudokuBoxElementArray=sa.getGrid();
     }
 
     public int[][] getSudokuElementArray(){
         return sudokuBoxElementArray;
     }
 
+    public void setSudokuBoxElementArray(int[][] sudokuBoxElementArray) {
+        this.sudokuBoxElementArray = sudokuBoxElementArray;
+    }
 }

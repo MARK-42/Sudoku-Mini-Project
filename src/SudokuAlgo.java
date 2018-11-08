@@ -1,10 +1,10 @@
 
-class algo {
+class Algo {
     private int a[][]={{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0}};
 
-    algo(int ar[][]){
+    public Algo(int ar[][]){
         for(int i=0;i<9;i++){
             for(int j=0;j<9;j++){
                 a[i][j]=ar[i][j];
@@ -16,7 +16,7 @@ class algo {
 
     }
 
-    algo(){
+    public Algo(){
 
         this.Solve(a);
 
@@ -113,26 +113,26 @@ class algo {
         return 1;
     }
 
-    int[][] returngrid(){
+    public int[][] getGrid(){
         return a;
     }
 }
 
-public class SudokuAlgo{
-    public static void main(String args[]){
-        int a[][];
-
-       algo obj=new algo();
-
-        a=obj.returngrid();
-
-        for(int i=0;i<9;i++){
-            for(int j=0;j<9;j++){
-                System.out.print(a[i][j]+" ");
-            }
-            System.out.println("");
-        }
-
-
-    }
-}
+//public class SudokuAlgo{
+//    public static void main(String args[]){
+//        int a[][];
+//
+//       Algo obj=new Algo();
+//
+//        a=obj.getGrid();
+//
+//        for(int i=0;i<9;i++){
+//            for(int j=0;j<9;j++){
+//                System.out.print(a[i][j]+" ");
+//            }
+//            System.out.println();
+//        }
+//
+//
+//    }
+//}

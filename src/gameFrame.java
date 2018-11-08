@@ -15,8 +15,12 @@ class mainFrame extends JFrame
         Container c=gameFrame.getContentPane();
         JTextField grid[][] = new JTextField[9][9];
         CreateGrid cg=new CreateGrid(c,grid);
-        mouse m=new mouse(grid);
-        key k=new key(grid);
+        PlayingGame pg=new PlayingGame(grid);
+        pg.highlightTheBlockOnMouseClick();
+//        mouse m=new mouse(grid);
+//        key k=new key(grid);
+        EasyMode easy=new EasyMode();
+        easy.setEasyBoard(grid);
         JButton newgame=new JButton("NewGame");
         newgame.addActionListener(new ActionListener() {
             @Override
@@ -34,9 +38,11 @@ class mainFrame extends JFrame
             @Override
             public void actionPerformed(ActionEvent e) {
                 int result =JOptionPane.showConfirmDialog(gameFrame, "Do you want to exit ?","PLease confirm exit", JOptionPane.YES_NO_OPTION);
-                if(result == JOptionPane.YES_OPTION)
+                if(result == JOptionPane.YES_OPTION) {
                     gameFrame.setVisible(false);
+                    System.exit(0);
                 }
+            }
         });
         newgame.setBounds(45,500,120,50);
         gameFrame.add(newgame);
@@ -87,35 +93,7 @@ class CreateGrid
                 grid[i][j].setBounds((105+(40*j)+2),(75+(40*i)+2),40,40);
                 c.add(grid[i][j]);
                 grid[i][j].setHorizontalAlignment(JTextField.CENTER);
-                /*
-                grid[i][j].addActionListener(new ActionListener() {
-                 @Override
-                public void actionPerformed(ActionEvent e) {
-                int result =JOptionPane.showConfirmDialog(gameFrame, "Do you want to exit ?","PLease confirm exit", JOptionPane.YES_NO_OPTION);
-                if(result == JOptionPane.YES_OPTION)
-                    gameFrame.setVisible(false);
-                }
-        });
-                 */
-                //...here m adding the validity and visiblity part....
-                /*grid[i][j].addMouseListener(new ActionListener() {
-                    @Override
-                    public void mousePressed(ActionEvent e)
-                    {
 
-                        for(int w=0;w<9;w++)
-                        {
-                            for(int y=0;y<9;y++)
-                            {
-                                if(w==i || y==j)
-                                {
-                                    grid[w][y].setBackground(Color.RED);
-                                }
-                            }
-                        }
-                    }
-
-                });*/
 
 
                 if((i==0 || i==1 || i==2 ) && (j==0 || j==1 || j==2 || j==6 || j==7 || j==8 ))
@@ -136,47 +114,8 @@ class CreateGrid
                 grid[i][j].setFont(f);
             }
         }
-      //  mouse m=new mouse(grid);
-        grid[0][5].setText("5");
-        grid[0][5].setEditable(false);
-
-        grid[2][3].setText("8");
-        grid[2][3].setEditable(false);
-
-        grid[0][1].setText("9");
-        grid[0][1].setEditable(false);
-
-        grid[6][2].setText("9");
-        grid[6][2].setEditable(false);
-
-        grid[8][5].setText("5");
-        grid[8][5].setEditable(false);
-
-        grid[4][7].setText("1");
-        grid[4][7].setEditable(false);
-
-        grid[6][8].setText("8");
-        grid[6][8].setEditable(false);
-        grid[3][8].setText("2");
-        grid[3][8].setEditable(false);
-
-        grid[6][1].setText("1");
-        grid[6][1].setEditable(false);
-        grid[2][4].setText("1");
-        grid[2][4].setEditable(false);
-        grid[4][4].setText("6");
-        grid[4][4].setEditable(false);
-
-        grid[5][1].setText("5");
-        grid[5][1].setEditable(false);
-
-        grid[6][4].setText("2");
-        grid[6][4].setEditable(false);
-
-
 
 
 
     }
-    //mouse m=new mouse(grid);
 }
