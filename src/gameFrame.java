@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 class mainFrame extends JFrame
 {
+    static JLabel q;
     mainFrame()
     {
         JFrame gameFrame = new JFrame("SUDOKU");
@@ -17,10 +18,10 @@ class mainFrame extends JFrame
         CreateGrid cg=new CreateGrid(c,grid);
         PlayingGame pg=new PlayingGame(grid);
         pg.highlightTheBlockOnMouseClick();
-//        mouse m=new mouse(grid);
-//        key k=new key(grid);
+// easymode board setter -->
         EasyMode easy=new EasyMode();
-        easy.setEasyBoard(grid);
+        easy.setEasyBoard(grid);//<--Add mode selector for this
+        pg.addUserInputToSudokuArray();
         JButton newgame=new JButton("NewGame");
         newgame.addActionListener(new ActionListener() {
             @Override
@@ -62,15 +63,16 @@ class mainFrame extends JFrame
         gameFrame.add(invalid);
         invalid.setForeground(Color.RED);
         c.setBackground(new Color(252, 236, 196));
-        JLabel q=new JLabel("                        The Game is on !!!");
+        q=new JLabel("                        The Game is on !!!");
         q.setBounds(115,20,500,30);
         q.setFont(f1);
         c.add(q);
         solution.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                q.setText("                             Coming Soon ...");
-
+                q.setText("                             Solution is ...");
+//                PlayingGame.printfilledSudo();
+                pg.setSolution();
             }
         });
 

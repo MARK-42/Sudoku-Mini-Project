@@ -27,6 +27,7 @@ class EasyMode extends SetGameBoard {
     }
     public void setEasyBoard(JTextField[][] grid){
         int [][] easyBox=generateEasySudokuBox();
+        PlayingGame pg1=new PlayingGame(easyBox,"easy");
         for(int i=0;i<9;i++){
             for(int j=0;j<9;j++){
                 if(easyBox[i][j]!=0){
