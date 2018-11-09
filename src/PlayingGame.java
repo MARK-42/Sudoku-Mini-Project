@@ -57,111 +57,129 @@ public class PlayingGame {
 
     public void checkCollisionForInput(int i,int j,int element) {
         //check collision in mini box
+        int flagMiniBox=0;
         int c=getSector(i,j);
         if(c==1){
             for(int w=0;w<=2;w++)
                 for(int y=0;y<=2;y++){
-                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j)))
+                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
-                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
-                        grid[i][j].setBackground(Color.LIGHT_GRAY);
+                        flagMiniBox=1;
+                    }
+//                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
+//                        grid[i][j].setBackground(Color.LIGHT_GRAY);
 
                 }
         }
         if(c==2){
             for(int w=0;w<=2;w++)
                 for(int y=3;y<=5;y++){
-                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j)))
+                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
-                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
-                        grid[i][j].setBackground(Color.LIGHT_GRAY);
+                        flagMiniBox=1;
+                    }
 
                 }
         }
         if(c==3){
             for(int w=0;w<=2;w++)
                 for(int y=6;y<=8;y++){
-                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j)))
+                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
-                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
-                        grid[i][j].setBackground(Color.LIGHT_GRAY);
+                        flagMiniBox=1;
+                    }
 
                 }
         }
         if(c==4){
             for(int w=3;w<=5;w++)
                 for(int y=0;y<=2;y++){
-                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j)))
+                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
-                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
-                        grid[i][j].setBackground(Color.LIGHT_GRAY);
+                        flagMiniBox=1;
+                    }
 
                 }
         }
         if(c==5){
             for(int w=3;w<=5;w++)
                 for(int y=3;y<=5;y++){
-                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j)))
+                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
-                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
-                        grid[i][j].setBackground(Color.LIGHT_GRAY);
+                        flagMiniBox=1;
+                    }
 
                 }
         }
         if(c==6){
             for(int w=3;w<=5;w++)
                 for(int y=6;y<=8;y++){
-                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j)))
+                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
-                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
-                        grid[i][j].setBackground(Color.LIGHT_GRAY);
+                        flagMiniBox=1;
+                    }
 
                 }
         }
         if(c==7){
             for(int w=6;w<=8;w++)
                 for(int y=0;y<=2;y++){
-                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j)))
+                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
-                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
-                        grid[i][j].setBackground(Color.LIGHT_GRAY);
+                        flagMiniBox=1;
+                    }
 
                 }
         }
         if(c==8){
             for(int w=6;w<=8;w++)
                 for(int y=3;y<=5;y++){
-                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j)))
+                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
-                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
-                        grid[i][j].setBackground(Color.LIGHT_GRAY);
+                        flagMiniBox=1;
+                    }
 
                 }
         }
         if(c==9){
             for(int w=6;w<=8;w++)
                 for(int y=6;y<=8;y++){
-                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j)))
+                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
-                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
-                        grid[i][j].setBackground(Color.LIGHT_GRAY);
+                        flagMiniBox=1;
+                    }
 
                 }
         }
         //check collision in row and coloumn
-        for(int w=0;w<9;w++)
-        {
-            for(int y=0;y<9;y++)
-            {
-                if(w==i || y==j)
-                {
-                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j)))
-                        grid[i][j].setBackground(Color.RED);
-                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
-                        grid[i][j].setBackground(Color.LIGHT_GRAY);
-                }
+//        for(int w=0;w<9;w++)
+//        {
+//            for(int y=0;y<9;y++)
+//            {
+//                if(w==i || y==j)
+//                {
+//                    if(sudokuBoxArray[w][y]==element && (!(w==i && y==j)))
+//                        grid[i][j].setBackground(Color.RED);
+//                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
+//                        grid[i][j].setBackground(Color.LIGHT_GRAY);
+//                }
+//            }
+//        }
+        int flagRowCol=0;
+        for(int y=0;y<9;y++){
+            if(sudokuBoxArray[i][y]==element && (!(y==j))) {
+                grid[i][j].setBackground(Color.RED);
+                flagRowCol=1;
             }
         }
+        for(int y=0;y<9;y++){
+            if(sudokuBoxArray[y][j]==element && (!(y==i))) {
+                grid[i][j].setBackground(Color.RED);
+                flagRowCol=1;
+            }
+        }
+        if (flagRowCol==0 && flagMiniBox==0)
+            grid[i][j].setBackground(Color.LIGHT_GRAY);
 
 
     }
@@ -375,7 +393,7 @@ public class PlayingGame {
         {
             for(int y=0;y<9;y++)
             {
-                if(grid[w][y].getBackground()==Color.RED)
+                if(grid[w][y].getBackground()==Color.RED && !(grid[w][y].getText().equals("")))
                     continue;
                 //grid[w][y].setBackground(Color.WHITE);
                 if((w==0 || w==1 || w==2 ) && (y==0 || y==1 || y==2 || y==6 || y==7 || y==8 ))
