@@ -15,6 +15,8 @@ class mainFrame extends JFrame
         Container c=gameFrame.getContentPane();
         JTextField grid[][] = new JTextField[9][9];
         CreateGrid cg=new CreateGrid(c,grid);
+        mouse m=new mouse(grid);
+        key k=new key(grid);
         JButton newgame=new JButton("NewGame");
         newgame.addActionListener(new ActionListener() {
             @Override
@@ -95,6 +97,26 @@ class CreateGrid
                 }
         });
                  */
+                //...here m adding the validity and visiblity part....
+                /*grid[i][j].addMouseListener(new ActionListener() {
+                    @Override
+                    public void mousePressed(ActionEvent e)
+                    {
+
+                        for(int w=0;w<9;w++)
+                        {
+                            for(int y=0;y<9;y++)
+                            {
+                                if(w==i || y==j)
+                                {
+                                    grid[w][y].setBackground(Color.RED);
+                                }
+                            }
+                        }
+                    }
+
+                });*/
+
 
                 if((i==0 || i==1 || i==2 ) && (j==0 || j==1 || j==2 || j==6 || j==7 || j==8 ))
                 {
@@ -114,6 +136,7 @@ class CreateGrid
                 grid[i][j].setFont(f);
             }
         }
+      //  mouse m=new mouse(grid);
         grid[0][5].setText("5");
         grid[0][5].setEditable(false);
 
@@ -155,4 +178,5 @@ class CreateGrid
 
 
     }
+    //mouse m=new mouse(grid);
 }
