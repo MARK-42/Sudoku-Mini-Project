@@ -75,8 +75,9 @@ public class LandingPage extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                String choice = diff.getSelectedItem().toString();
                 setVisible(false);
-                mainFrame frame=new mainFrame();
+                mainFrame frame=new mainFrame(choice);
             }
         });
 

@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 class mainFrame extends JFrame
 {
     static JLabel q;
-    mainFrame()
+    mainFrame(String choice)
     {
         JFrame gameFrame = new JFrame("SUDOKU");
         gameFrame.setLayout(null);
@@ -16,11 +16,22 @@ class mainFrame extends JFrame
         Container c=gameFrame.getContentPane();
         JTextField grid[][] = new JTextField[9][9];
         CreateGrid cg=new CreateGrid(c,grid);
-        PlayingGame pg=new PlayingGame(grid);
+        PlayingGame pg=new PlayingGame(grid,choice);
         pg.highlightTheBlockOnMouseClick();
-// easymode board setter -->
-        EasyMode easy=new EasyMode();
-        easy.setEasyBoard(grid);//<--Add mode selector for this
+        // easymode board setter -->
+        if(choice.equals("Easy")) {
+            EasyMode easy = new EasyMode();
+            easy.setEasyBoard(grid);//<--Add mode selector for this
+        }
+        else if(choice.equals("Medium")) {
+            MediumMode medium = new MediumMode();
+            medium.setMediumBoard(grid);//<--Add mode selector for this
+        }
+        else {
+        HardMode hard = new HardMode();
+        hard.setHardBoard(grid);//<--Add mode selector for this
+    }
+
         pg.addUserInputToSudokuArray();
         JButton newgame=new JButton("NewGame");
         newgame.addActionListener(new ActionListener() {

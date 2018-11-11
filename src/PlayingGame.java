@@ -13,8 +13,15 @@ public class PlayingGame {
     static int sudokuBoxArrCopy[][];
     private String mode;
 
-    public PlayingGame(JTextField[][] grid) {
+    public PlayingGame(JTextField[][] grid,String mode) {
         this.grid = grid;
+        this.mode=mode;
+        if(mode.equals("Easy"))
+            numBlocksFilled=41;
+        else if(mode.equals("Medium"))
+            numBlocksFilled=32;
+        else
+            numBlocksFilled=22;
     }
 
     public PlayingGame(int sudokuBoxArray[][],String mode){
@@ -26,12 +33,12 @@ public class PlayingGame {
             {
                 sudokuBoxArrCopy[i][j]=sudokuBoxArray[i][j];
             }
-//        if(mode.equals("easy"))
-//            numBlocksFilled=41;
-//        else if(mode.equals("medium"))
-//            numBlocksFilled=32;
-//        else
-//            numBlocksFilled=22;
+        if(mode.equals("Easy"))
+            numBlocksFilled=41;
+        else if(mode.equals("Medium"))
+            numBlocksFilled=32;
+        else
+            numBlocksFilled=22;
     }
 
     public void addUserInputToSudokuArray(){
