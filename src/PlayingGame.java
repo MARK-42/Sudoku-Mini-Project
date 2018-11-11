@@ -10,6 +10,7 @@ public class PlayingGame {
     private int numBlocksFilled=0;
     static JTextField grid [][];
     static int sudokuBoxArray[][];
+    static int sudokuBoxArrCopy[][];
     private String mode;
 
     public PlayingGame(JTextField[][] grid) {
@@ -19,6 +20,12 @@ public class PlayingGame {
     public PlayingGame(int sudokuBoxArray[][],String mode){
         this.sudokuBoxArray=sudokuBoxArray;
         this.mode=mode;
+        sudokuBoxArrCopy=new int[9][9];
+        for(int i=0;i<9;i++)
+            for(int j=0;j<9;j++)
+            {
+                sudokuBoxArrCopy[i][j]=sudokuBoxArray[i][j];
+            }
 //        if(mode.equals("easy"))
 //            numBlocksFilled=41;
 //        else if(mode.equals("medium"))
@@ -37,9 +44,8 @@ public class PlayingGame {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 //                        grid[i_curr][j_curr].setBackground(grid[i_curr][j_curr].getBackground());
-                        if(!grid[i_curr][j_curr].getText().equals("")) {
+                        if(!(grid[i_curr][j_curr].getText().equals(""))) {
                             sudokuBoxArray[i_curr][j_curr] = Integer.parseInt(grid[i_curr][j_curr].getText());
-
                         }
                         checkCollisionForInput(i_curr,j_curr,sudokuBoxArray[i_curr][j_curr]);
 //to check if won when filled completely
@@ -65,6 +71,12 @@ public class PlayingGame {
                     if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
                         flagMiniBox=1;
+                        for(int icount=0;icount<9;icount++)
+                            for(int jcount=0;jcount<9;jcount++)
+                            {
+                                if((icount!=i)||(jcount!=j))
+                                    grid[icount][jcount].setEditable(false);
+                            }
                     }
 //                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
 //                        grid[i][j].setBackground(Color.LIGHT_GRAY);
@@ -77,6 +89,12 @@ public class PlayingGame {
                     if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
                         flagMiniBox=1;
+                        for(int icount=0;icount<9;icount++)
+                            for(int jcount=0;jcount<9;jcount++)
+                            {
+                                if((icount!=i)||(jcount!=j))
+                                    grid[icount][jcount].setEditable(false);
+                            }
                     }
 
                 }
@@ -87,6 +105,12 @@ public class PlayingGame {
                     if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
                         flagMiniBox=1;
+                        for(int icount=0;icount<9;icount++)
+                            for(int jcount=0;jcount<9;jcount++)
+                            {
+                                if((icount!=i)||(jcount!=j))
+                                    grid[icount][jcount].setEditable(false);
+                            }
                     }
 
                 }
@@ -97,6 +121,12 @@ public class PlayingGame {
                     if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
                         flagMiniBox=1;
+                        for(int icount=0;icount<9;icount++)
+                            for(int jcount=0;jcount<9;jcount++)
+                            {
+                                if((icount!=i)||(jcount!=j))
+                                    grid[icount][jcount].setEditable(false);
+                            }
                     }
 
                 }
@@ -107,6 +137,12 @@ public class PlayingGame {
                     if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
                         flagMiniBox=1;
+                        for(int icount=0;icount<9;icount++)
+                            for(int jcount=0;jcount<9;jcount++)
+                            {
+                                if((icount!=i)||(jcount!=j))
+                                    grid[icount][jcount].setEditable(false);
+                            }
                     }
 
                 }
@@ -117,6 +153,12 @@ public class PlayingGame {
                     if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
                         flagMiniBox=1;
+                        for(int icount=0;icount<9;icount++)
+                            for(int jcount=0;jcount<9;jcount++)
+                            {
+                                if((icount!=i)||(jcount!=j))
+                                    grid[icount][jcount].setEditable(false);
+                            }
                     }
 
                 }
@@ -127,6 +169,12 @@ public class PlayingGame {
                     if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
                         flagMiniBox=1;
+                        for(int icount=0;icount<9;icount++)
+                            for(int jcount=0;jcount<9;jcount++)
+                            {
+                                if((icount!=i)||(jcount!=j))
+                                    grid[icount][jcount].setEditable(false);
+                            }
                     }
 
                 }
@@ -137,6 +185,12 @@ public class PlayingGame {
                     if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
                         flagMiniBox=1;
+                        for(int icount=0;icount<9;icount++)
+                            for(int jcount=0;jcount<9;jcount++)
+                            {
+                                if((icount!=i)||(jcount!=j))
+                                    grid[icount][jcount].setEditable(false);
+                            }
                     }
 
                 }
@@ -147,6 +201,12 @@ public class PlayingGame {
                     if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
                         flagMiniBox=1;
+                        for(int icount=0;icount<9;icount++)
+                            for(int jcount=0;jcount<9;jcount++)
+                            {
+                                if((icount!=i)||(jcount!=j))
+                                    grid[icount][jcount].setEditable(false);
+                            }
                     }
 
                 }
@@ -170,16 +230,40 @@ public class PlayingGame {
             if(sudokuBoxArray[i][y]==element && (!(y==j))) {
                 grid[i][j].setBackground(Color.RED);
                 flagRowCol=1;
+                for(int icount=0;icount<9;icount++)
+                    for(int jcount=0;jcount<9;jcount++)
+                    {
+                        if((icount!=i)||(jcount!=j))
+                            grid[icount][jcount].setEditable(false);
+                    }
             }
         }
         for(int y=0;y<9;y++){
             if(sudokuBoxArray[y][j]==element && (!(y==i))) {
                 grid[i][j].setBackground(Color.RED);
                 flagRowCol=1;
+                for(int icount=0;icount<9;icount++)
+                    for(int jcount=0;jcount<9;jcount++)
+                    {
+                        if((icount!=i)||(jcount!=j))
+                            grid[icount][jcount].setEditable(false);
+                    }
             }
         }
-        if (flagRowCol==0 && flagMiniBox==0)
+        if (flagRowCol==0 && flagMiniBox==0) {
             grid[i][j].setBackground(Color.LIGHT_GRAY);
+            for(int icount=0;icount<9;icount++)
+                for(int jcount=0;jcount<9;jcount++)
+                {
+                    grid[icount][jcount].setEditable(true);
+                }
+            for(int icount=0;icount<9;icount++)
+                for(int jcount=0;jcount<9;jcount++)
+                {
+                    if(sudokuBoxArrCopy[icount][jcount]!=0)
+                        grid[icount][jcount].setEditable(false);
+                }
+        }
 
 
     }
@@ -356,7 +440,6 @@ public class PlayingGame {
             return true;
         else
             return false;
-
     }
 
     public int getSector(int i,int j){
