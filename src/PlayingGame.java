@@ -259,6 +259,9 @@ public class PlayingGame {
         }
         if (flagRowCol==0 && flagMiniBox==0) {
             grid[i][j].setBackground(Color.LIGHT_GRAY);
+            numBlocksFilled=numBlocksFilled+1;
+            if(numBlocksFilled==81)
+                mainFrame.q.setText("                        YOU WON!!!");
             for(int icount=0;icount<9;icount++)
                 for(int jcount=0;jcount<9;jcount++)
                 {
@@ -435,19 +438,19 @@ public class PlayingGame {
 
     }
 
-    public boolean checkAllAreFilled()
-    {
-        for(int w=0;w<9;w++) {
-            for(int y=0;y<9;y++) {
-                if(sudokuBoxArray[w][y]!=0)
-                    numBlocksFilled++;
-            }
-        }
-        if(numBlocksFilled==81)
-            return true;
-        else
-            return false;
-    }
+//    public boolean checkAllAreFilled()
+//    {
+//        for(int w=0;w<9;w++) {
+//            for(int y=0;y<9;y++) {
+//                if(sudokuBoxArray[w][y]!=0)
+//                    numBlocksFilled++;
+//            }
+//        }
+//        if(numBlocksFilled==81)
+//            return true;
+//        else
+//            return false;
+//    }
 
     public int getSector(int i,int j){
         if((i==0||i==1||i==2)){
