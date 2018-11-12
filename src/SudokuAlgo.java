@@ -12,7 +12,7 @@ class Algo {
                 a[i][j]=ar[i][j];
             }
         }
-        int k=Solve(a);
+         k=Solve(a);
 
 
 
@@ -27,7 +27,7 @@ class Algo {
 
         a[coorx][coory]=r.nextInt(9)+1;
 
-        this.Solve(a);
+         Solve(a);
 
 
     }
