@@ -83,7 +83,7 @@ class mainFrame extends JFrame
             public void actionPerformed(ActionEvent e) {
                 q.setText("                             Solution is ...");
 //                PlayingGame.printfilledSudo();
-                pg.setSolution();
+                pg.setSolution(q);
             }
         });
 

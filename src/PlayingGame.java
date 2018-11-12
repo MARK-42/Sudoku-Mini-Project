@@ -278,7 +278,7 @@ public class PlayingGame {
 
     }
 
-    public void setSolution()
+    public void setSolution(JLabel q)
     {
         int [][] tempArr;
         for(int w=0;w<9;w++) {
@@ -288,11 +288,15 @@ public class PlayingGame {
             }
         }
         Algo sa1=new Algo(sudokuBoxArray);
-        tempArr=sa1.getGrid();
-        for(int w=0;w<9;w++) {
-            for(int y=0;y<9;y++) {
-                grid[w][y].setText(""+tempArr[w][y]);
-                grid[w][y].setEditable(false);
+        if(sa1.getk()==0)
+            q.setText("No valid solution available!!");
+         else {
+            tempArr = sa1.getGrid();
+            for (int w = 0; w < 9; w++) {
+                for (int y = 0; y < 9; y++) {
+                    grid[w][y].setText("" + tempArr[w][y]);
+                    grid[w][y].setEditable(false);
+                }
             }
         }
     }

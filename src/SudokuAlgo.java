@@ -1,5 +1,7 @@
+import java.util.Random;
 
 class Algo {
+    private int k;
     private int a[][]={{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0}};
@@ -15,8 +17,15 @@ class Algo {
 
 
     }
+    int getk()
+    {return k;}
 
     public Algo(){
+        Random r=new Random();
+        int coorx=r.nextInt(8)+0;
+        int coory=r.nextInt(8)+0;
+
+        a[coorx][coory]=r.nextInt(9)+1;
 
         this.Solve(a);
 
