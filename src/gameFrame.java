@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 class mainFrame extends JFrame
 {
@@ -78,6 +80,7 @@ class mainFrame extends JFrame
         q.setBounds(115,20,500,30);
         q.setFont(f1);
         c.add(q);
+
         solution.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -86,7 +89,63 @@ class mainFrame extends JFrame
                 pg.setSolution(q);
             }
         });
+       ImageIcon i = new ImageIcon(getClass().getResource("icon.jpg"));
+        JLabel rules=new JLabel(i);
 
+        rules.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                JFrame f = new JFrame("Rules");
+                JPanel p=new JPanel();
+                p.setLayout(new FlowLayout());
+                p.setBounds(300, 80, 600  , 600);
+                f.setBounds(400, 100, 600  , 400);
+                f.setVisible(true);
+                JLabel til=new JLabel("RULES-",JLabel.CENTER);
+
+                JLabel rulepage=new JLabel("<html>      <font color='red'>When you start a game of Sudoku, some blocks will be pre-filled for you.<br>You cannot change these numbers in the course of the game.<br> <br></font>" +
+                                           "            <font color='blue'>Each column must contain all of the numbers 1 through 9 and no two <br>numbers in the same column of a Sudoku puzzle can be the same.<br> <br> </font>"+
+                                           "            <font color='green'>Each row must contain all of the numbers 1 through 9 and no two  <br>numbers in the same row of a Sudoku puzzle can be the same. <br><br> </font>"+
+                                            "               <font color='blue'>Each block must contain all of the numbers 1 through 9 and no two <br>numbers in the same block of a Sudoku puzzle can be the same.<br><br> </font>"+
+                        "               <font color='green'>Scoring on the basis of time consumed.<br> </font>"+
+                        "</html>"
+                        ,JLabel.CENTER);
+
+
+                rulepage.setFont(f1);
+                til.setFont(f1);
+                f.setBackground(new Color(200, 236, 196));
+                Font f1=new Font("Arial",Font.BOLD,14);
+                p.add(til);
+                p.add(rulepage);
+
+            f.add(p);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
+        rules.setBounds(550,500,50,50);
+
+
+    c.add(rules);
     }
 
 

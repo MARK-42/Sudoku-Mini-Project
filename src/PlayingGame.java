@@ -316,11 +316,6 @@ public class PlayingGame {
 
                     @Override
                     public void mouseEntered(MouseEvent mouseEvent) {
-//
-                    }
-
-                    @Override
-                    public void mouseClicked(MouseEvent mouseEvent) {
                         setBoardBackground();
                         for(int w=0;w<9;w++)
                         {
@@ -407,6 +402,11 @@ public class PlayingGame {
                                     grid[w][y].setBackground(Color.LIGHT_GRAY);
                                 }
                         }
+                    }
+
+                    @Override
+                    public void mouseClicked(MouseEvent mouseEvent) {
+
                     }
 
                     @Override
