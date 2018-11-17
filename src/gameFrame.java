@@ -203,7 +203,11 @@ class mainFrame extends JFrame
         hints.setBounds(500,0,100,50);
     c.add(hints);
     }
+    public void winnerDialog(){
+        String s=q.getText();
+//        JOptionPane.showMessageDialog(new JFrame(),"Eggs are not supposed to be green.","Inane custom dialog",JOptionPane.INFORMATION_MESSAGE);
 
+    }
 
 
 

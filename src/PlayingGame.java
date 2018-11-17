@@ -63,6 +63,8 @@ public class PlayingGame {
                             sudokuBoxArray[i_curr][j_curr] = Integer.parseInt(grid[i_curr][j_curr].getText());
                         }
                         checkCollisionForInput(i_curr,j_curr,sudokuBoxArray[i_curr][j_curr]);
+
+
                     }
                 });
                /* grid[i][j].addActionListener(new ActionListener() {
@@ -278,6 +280,7 @@ public class PlayingGame {
         }
         if (flagRowCol==0 && flagMiniBox==0) {
             grid[i][j].setBackground(Color.LIGHT_GRAY);
+
             numBlocksFilled=numBlocksFilled+1;
             if(numBlocksFilled==81)
             {
@@ -312,8 +315,13 @@ public class PlayingGame {
                     System.out.println(arr2[i]);
                 }*/
                 //insert new congratulations box frame here
+
                 //comment down the line below when point above done.
+//                JOptionPane.showMessageDialog(mainFrame.class,"Eggs are not supposed to be green.","Inane custom dialog",JOptionPane.INFORMATION_MESSAGE,JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(new JFrame(),"CONGRAGULATIONS!!! You Won!","You Won!",JOptionPane.INFORMATION_MESSAGE);
+
                 mainFrame.q.setText("          YOU WON!!!"+ hr +" "+min+" "+sec);
+
             }
             for(int icount=0;icount<9;icount++)
                 for(int jcount=0;jcount<9;jcount++)
@@ -484,6 +492,7 @@ public class PlayingGame {
             }
         }
     }
+
 
     public void getTheTimeCounter(int dont_know_datatype)
     {
