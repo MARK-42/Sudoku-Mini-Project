@@ -281,8 +281,8 @@ public class PlayingGame {
         if (flagRowCol==0 && flagMiniBox==0) {
             grid[i][j].setBackground(Color.LIGHT_GRAY);
 
-            numBlocksFilled=numBlocksFilled+1;
-            if(numBlocksFilled==81)
+//            numBlocksFilled=numBlocksFilled+1;
+            if(checkAllAreFilled())
             {
                 SimpleDateFormat t = new SimpleDateFormat("HH:mm:ss");
                 Date date2 = new Date();
@@ -510,19 +510,19 @@ public class PlayingGame {
 //        }
 //    }
 
-//    public boolean checkAllAreFilled()
-//    {
-//        for(int w=0;w<9;w++) {
-//            for(int y=0;y<9;y++) {
-//                if(sudokuBoxArray[w][y]!=0)
-//                    numBlocksFilled++;
-//            }
-//        }
-//        if(numBlocksFilled==81)
-//            return true;
-//        else
-//            return false;
-//    }
+    public boolean checkAllAreFilled()
+    {
+        for(int w=0;w<9;w++) {
+            for(int y=0;y<9;y++) {
+                if(sudokuBoxArray[w][y]!=0)
+                    numBlocksFilled++;
+            }
+        }
+        if(numBlocksFilled==81)
+            return true;
+        else
+            return false;
+    }
 
     public int getSector(int i,int j){
         if((i==0||i==1||i==2)){
