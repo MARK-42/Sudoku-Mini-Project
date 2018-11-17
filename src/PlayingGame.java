@@ -318,9 +318,9 @@ public class PlayingGame {
 
                 //comment down the line below when point above done.
 //                JOptionPane.showMessageDialog(mainFrame.class,"Eggs are not supposed to be green.","Inane custom dialog",JOptionPane.INFORMATION_MESSAGE,JOptionPane.PLAIN_MESSAGE);
-                JOptionPane.showMessageDialog(new JFrame(),"CONGRAGULATIONS!!! You Won!","You Won!",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(new JFrame(),"<html>CONGRAGULATIONS!!! You Won!<br> your timing is: "+Integer.toString(hr)+" : "+Integer.toString(min)+" : "+Integer.toString(sec)+"</html>","You Won!",JOptionPane.INFORMATION_MESSAGE);
 
-                mainFrame.q.setText("          YOU WON!!!"+ hr +" "+min+" "+sec);
+                //mainFrame.q.setText("          YOU WON!!!"+ hr +" "+min+" "+sec);
 
             }
             for(int icount=0;icount<9;icount++)
