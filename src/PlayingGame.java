@@ -1,9 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
@@ -49,8 +46,26 @@ public class PlayingGame {
             final int i_curr = i;
             for (int j = 0; j < 9; j++) {
                 final int j_curr = j;
+                grid[i][j].addKeyListener(new KeyListener() {
+                    @Override
+                    public void keyTyped(KeyEvent e) {
 
-                grid[i][j].addActionListener(new ActionListener() {
+                    }
+
+                    @Override
+                    public void keyPressed(KeyEvent e) {
+
+                    }
+
+                    @Override
+                    public void keyReleased(KeyEvent e) {
+                        if(!(grid[i_curr][j_curr].getText().equals(""))) {
+                            sudokuBoxArray[i_curr][j_curr] = Integer.parseInt(grid[i_curr][j_curr].getText());
+                        }
+                        checkCollisionForInput(i_curr,j_curr,sudokuBoxArray[i_curr][j_curr]);
+                    }
+                });
+               /* grid[i][j].addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 //                        grid[i_curr][j_curr].setBackground(grid[i_curr][j_curr].getBackground());
@@ -66,7 +81,7 @@ public class PlayingGame {
 
                     }
 
-                });
+                });*/
 
             }
         }
