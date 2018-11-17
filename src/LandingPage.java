@@ -4,7 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.jar.JarFile;
 
 public class LandingPage extends JFrame {
@@ -74,13 +76,14 @@ public class LandingPage extends JFrame {
         start.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                SimpleDateFormat t = new SimpleDateFormat("HH:mm:ss");
+                Date date1 = new Date();
+                System.out.println(t.format(date1));
+                String str1 = t.format(date1);
                 String choice = diff.getSelectedItem().toString();
                 setVisible(false);
-                mainFrame frame=new mainFrame(choice);
+                mainFrame frame=new mainFrame(choice,str1);
             }
         });
-
-
     }
 }

@@ -8,8 +8,10 @@ import java.awt.event.MouseListener;
 class mainFrame extends JFrame
 {
     static JLabel q;
-    mainFrame(String choice)
+    static String timeslice;
+    mainFrame(String choice,String timeslice)
     {
+        this.timeslice=timeslice;
         JFrame gameFrame = new JFrame("SUDOKU");
         gameFrame.setLayout(null);
         gameFrame.setBounds(400, 100, 600, 600);

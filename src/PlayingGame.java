@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class PlayingGame {
     private int playingDuration;//check datatype before use
@@ -12,6 +14,7 @@ public class PlayingGame {
     static int sudokuBoxArray[][];
     static int sudokuBoxArrCopy[][];
     private String mode;
+    int hr, min, sec;
 
     public PlayingGame(JTextField[][] grid,String mode) {
         this.grid = grid;
@@ -261,7 +264,41 @@ public class PlayingGame {
             grid[i][j].setBackground(Color.LIGHT_GRAY);
             numBlocksFilled=numBlocksFilled+1;
             if(numBlocksFilled==81)
-                mainFrame.q.setText("                        YOU WON!!!");
+            {
+                SimpleDateFormat t = new SimpleDateFormat("HH:mm:ss");
+                Date date2 = new Date();
+                System.out.println(t.format(date2));
+                String str2 = t.format(date2);
+
+                String[] arr2 = str2.split(":");
+                String str1 = mainFrame.timeslice;
+                String[] arr1 = str1.split(":");
+                int a1= (Integer.parseInt(arr1[0]));
+                int b1= (Integer.parseInt(arr1[1]));
+                int c1= (Integer.parseInt(arr1[2]));
+                int result1_sec= (a1*(60*60))+(b1*60)+(c1);
+
+                int a2= (Integer.parseInt(arr2[0]));
+                int b2= (Integer.parseInt(arr2[1]));
+                int c2= (Integer.parseInt(arr2[2]));
+                int result2_sec= (a2*(60*60))+(b2*60)+(c2);
+
+                int final_sec=result2_sec-result1_sec;
+
+                hr = final_sec/(60*60);
+                final_sec=final_sec-(hr*(60*60));
+                min = final_sec/60;
+                final_sec=final_sec-(min*60);
+                sec = final_sec;
+
+
+                /*for (int i = 0; i < 3; i++) {
+                    System.out.println(arr2[i]);
+                }*/
+                //insert new congratulations box frame here
+                //comment down the line below when point above done.
+                mainFrame.q.setText("          YOU WON!!!"+ hr +" "+min+" "+sec);
+            }
             for(int icount=0;icount<9;icount++)
                 for(int jcount=0;jcount<9;jcount++)
                 {
@@ -436,11 +473,17 @@ public class PlayingGame {
     {
         //
     }
-
-    public void getTime()
-    {
-
-    }
+//
+//    public String getTime()
+//    {
+//        if(checkAllAreFilled) {
+//            SimpleDateFormat t = new SimpleDateFormat("HH:mm:ss");
+//            Date date1 = new Date();
+//            System.out.println(t.format(date1));
+//            String str = t.format(date1);
+//            return str;
+//        }
+//    }
 
 //    public boolean checkAllAreFilled()
 //    {
