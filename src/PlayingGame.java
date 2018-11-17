@@ -63,7 +63,9 @@ public class PlayingGame {
                             sudokuBoxArray[i_curr][j_curr] = Integer.parseInt(grid[i_curr][j_curr].getText());
                         }
                         checkCollisionForInput(i_curr,j_curr,sudokuBoxArray[i_curr][j_curr]);
-
+                        if(checkIntervalForTheInput(Integer.parseInt(grid[i_curr][j_curr].getText()))==false){
+                            grid[i_curr][j_curr].setBackground(Color.RED);
+                        }
 
                     }
                 });
@@ -362,9 +364,11 @@ public class PlayingGame {
         }
     }
 
-    public int checkIntervalForTheInput(int t)
+    public boolean checkIntervalForTheInput(int t)
     {
-        return 1;
+        if(t>0&&t<=9)
+            return true;
+        else return false;
     }
 
     public void highlightTheBlockOnMouseClick()
