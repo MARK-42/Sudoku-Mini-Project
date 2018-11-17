@@ -144,7 +144,7 @@ class mainFrame extends JFrame
 
             }
         });
-        rules.setBounds(550,500,50,50);
+        rules.setBounds(0,0,50,50);
 
 
     c.add(rules);
@@ -153,7 +153,7 @@ class mainFrame extends JFrame
     @Override
 
         public void mouseClicked(MouseEvent e) {
-            JFrame f = new JFrame("Rules");
+            JFrame f = new JFrame("HINTS");
             JPanel p=new JPanel();
             p.setLayout(new FlowLayout());
             p.setBounds(300, 80, 600  , 600);
