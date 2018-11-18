@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 
 public class PlayingGame {
     private int playingDuration;//check datatype before use
-    private int numBlocksFilled=0;
+    static int numBlocksFilled=0;
     static JTextField grid [][];
     static int sudokuBoxArray[][];
     static int sudokuBoxArrCopy[][];
@@ -63,7 +63,7 @@ public class PlayingGame {
                             sudokuBoxArray[i_curr][j_curr] = Integer.parseInt(grid[i_curr][j_curr].getText());
                         }
                         checkCollisionForInput(i_curr,j_curr,sudokuBoxArray[i_curr][j_curr]);
-                        if(checkIntervalForTheInput(Integer.parseInt(grid[i_curr][j_curr].getText()))==false){
+                        if(!checkIntervalForTheInput(Integer.parseInt(grid[i_curr][j_curr].getText()))){
                             grid[i_curr][j_curr].setBackground(Color.RED);
                         }
 
@@ -101,12 +101,7 @@ public class PlayingGame {
                     if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
                         flagMiniBox=1;
-//                        for(int icount=0;icount<9;icount++)
-//                            for(int jcount=0;jcount<9;jcount++)
-//                            {
-//                                if((icount!=i)||(jcount!=j))
-//                                    grid[icount][jcount].setEditable(false);
-//                            }
+
                     }
 //                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
 //                        grid[i][j].setBackground(Color.LIGHT_GRAY);
@@ -282,7 +277,7 @@ public class PlayingGame {
         }
         if (flagRowCol==0 && flagMiniBox==0) {
             grid[i][j].setBackground(Color.LIGHT_GRAY);
-
+        }
 //            numBlocksFilled=numBlocksFilled+1;
             if(checkAllAreFilled())
             {
@@ -325,18 +320,18 @@ public class PlayingGame {
                 //mainFrame.q.setText("          YOU WON!!!"+ hr +" "+min+" "+sec);
 
             }
-            for(int icount=0;icount<9;icount++)
-                for(int jcount=0;jcount<9;jcount++)
-                {
-                    grid[icount][jcount].setEditable(true);
-                }
-            for(int icount=0;icount<9;icount++)
-                for(int jcount=0;jcount<9;jcount++)
-                {
-                    if(sudokuBoxArrCopy[icount][jcount]!=0)
-                        grid[icount][jcount].setEditable(false);
-                }
-        }
+//            for(int icount=0;icount<9;icount++)
+//                for(int jcount=0;jcount<9;jcount++)
+//                {
+//                    grid[icount][jcount].setEditable(true);
+//                }
+//            for(int icount=0;icount<9;icount++)
+//                for(int jcount=0;jcount<9;jcount++)
+//                {
+//                    if(sudokuBoxArrCopy[icount][jcount]!=0)
+//                        grid[icount][jcount].setEditable(false);
+//                }
+
 
 
     }
@@ -516,13 +511,14 @@ public class PlayingGame {
 
     public boolean checkAllAreFilled()
     {
+        numBlocksFilled=0;
         for(int w=0;w<9;w++) {
             for(int y=0;y<9;y++) {
-                if(sudokuBoxArray[w][y]!=0)
+                if(sudokuBoxArray[w][y]>0 && sudokuBoxArray[w][y]<=9)
                     numBlocksFilled++;
             }
         }
-        if(numBlocksFilled==81)
+        if(numBlocksFilled>=81)
             return true;
         else
             return false;
