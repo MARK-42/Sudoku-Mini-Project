@@ -62,6 +62,9 @@ public class PlayingGame {
                         if(!(grid[i_curr][j_curr].getText().equals(""))) {
                             sudokuBoxArray[i_curr][j_curr] = Integer.parseInt(grid[i_curr][j_curr].getText());
                         }
+                        else if(grid[i_curr][j_curr].getText().equals("")){
+                            sudokuBoxArray[i_curr][j_curr] =0;
+                        }
                         checkCollisionForInput(i_curr,j_curr,sudokuBoxArray[i_curr][j_curr]);
                         if(!checkIntervalForTheInput(Integer.parseInt(grid[i_curr][j_curr].getText()))){
                             grid[i_curr][j_curr].setBackground(Color.RED);
