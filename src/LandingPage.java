@@ -26,12 +26,14 @@ public class LandingPage extends JFrame {
 
 class develop extends JFrame{
     JLabel til = new JLabel("Anshul Agarwal");
-    JLabel t = new JLabel("<html>      <font color='red'>When you start a game of Sudoku, some blocks will be pre-filled for you.<br>You cannot change these numbers in the course of the game.<br> <br></font>" +
-                       "            <font color='blue'>Each column must contain all of the numbers 1 through 9 and no two <br>numbers in the same column of a Sudoku puzzle can be the same.<br> <br> </font>"+
-                       "            <font color='red'>Each row must contain all of the numbers 1 through 9 and no two  <br>numbers in the same row of a Sudoku puzzle can be the same. <br><br> </font>"+
-                       "               <font color='blue'>Each block must contain all of the numbers 1 through 9 and no two <br>numbers in the same block of a Sudoku puzzle can be the same.<br><br> </font>"+
-                       "               <font color='red'>Scoring is done on the basis of time consumed.<br> </font>"+
-                       "</html>"
+    JLabel t = new JLabel("<html>           <font color='white'>This Sudoku game has been developed as a part of OOM Mini-Project<br>      by our team comprising of 6 members under<br>       the supervision of Dr  R. Kala and Dr O.P. Vyas  <br></font>" +
+                       "            <font color='yellow'>   Ritik Raj   IIM20170039<br> </font>"+
+                       "            <font color='white'>   Arya Krishnan ICM2017501<br> </font>"+
+                       "               <font color='yellow'>   Anshul Agarwal IWM2017008<br> </font>"+
+                       "               <font color='white'>   Harsh Aryan ITM2017003<br> </font>"+
+                       "               <font color='yellow'>   Ritesh Yadav IRM2017001<br> </font>"+
+                       "               <font color='white'>   Bineet Kumar ISM2017008<br> </font>"+
+            "</html>"
                        ,JLabel.CENTER);
 
     develop()
