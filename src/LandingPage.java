@@ -10,81 +10,46 @@ import static java.awt.Font.BOLD;
 
 
 public class LandingPage extends JFrame {
-    //private ImageIcon back_image;
 
     public LandingPage() {
 
-        super("Sudoku");
+       // super("Sudoku");
 
         Dimension d=Toolkit.getDefaultToolkit().getScreenSize();
         setBounds(0,0,d.width,d.height);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pane p= new pane();
         add(p);
-//        back_image = new ImageIcon(getClass().getResource("image_background.jpg"));
-//        setContentPane(new JLabel(back_image));
         setVisible(true);
-//        ((JComboBox) difficulty).addItemListener(
-//                new ItemListener() {
-//                    public void levelchange(ItemEvent event){
-//                        if(event.getStateChange()==ItemEvent.SELECTED)
-//                    }
-//                }
-//
-//                }
-//        );
-
-
-        //setSize(600, 600);
-
-        //setLayout(new GridBagLayout());
-        //GridBagConstraints c = new GridBagConstraints();
-//        c.weightx = 6;
-//        c.weighty = 6;
-//        c.gridx = 2;
-//        c.gridy = 0;
-//        add(title, c);
-
-
-//        c.weightx = 6;
-//        c.weighty = 6;
-//        c.gridx = 2;
-//        c.gridy = 1;
-//        add(pic1, c);
-
-//        c.weightx = 6;
-//        c.weighty = 6;
-//        c.gridx = 2;
-//        c.gridy = 0;
-//        add(pic2, c);
-
-//        c.weightx = 6;
-//        c.weighty = 6;
-//        c.gridx = 1;
-//        c.gridy = 4;
-//        add(difficulty, c);
-//
-//        c.weightx = 6;
-//        c.weighty = 6;
-//        c.gridx = 2;
-//        c.gridy = 4;
-//        add(diff, c);
-//
-//        c.weightx = 6;
-//        c.weighty = 6;
-//        c.gridx = 3;
-//        c.gridy = 4;
-//        add(start, c);
     }
 }
 
+class develop extends JFrame{
+    JLabel til = new JLabel("Anshul Agarwal");
+    JLabel t = new JLabel("<html>      <font color='red'>When you start a game of Sudoku, some blocks will be pre-filled for you.<br>You cannot change these numbers in the course of the game.<br> <br></font>" +
+                       "            <font color='blue'>Each column must contain all of the numbers 1 through 9 and no two <br>numbers in the same column of a Sudoku puzzle can be the same.<br> <br> </font>"+
+                       "            <font color='red'>Each row must contain all of the numbers 1 through 9 and no two  <br>numbers in the same row of a Sudoku puzzle can be the same. <br><br> </font>"+
+                       "               <font color='blue'>Each block must contain all of the numbers 1 through 9 and no two <br>numbers in the same block of a Sudoku puzzle can be the same.<br><br> </font>"+
+                       "               <font color='red'>Scoring is done on the basis of time consumed.<br> </font>"+
+                       "</html>"
+                       ,JLabel.CENTER);
+
+    develop()
+    {
+        super("Developer Page");
+        add(til);
+        add(t);
+        setBounds(400,100,600,400);
+        setVisible(true);
+    }
+}
 
 
 class pane extends JPanel{
     private JButton start= new JButton("Go");;
     private JLabel difficulty = new JLabel("Difficulty:");
     private JComboBox diff = new JComboBox(levels);
-    private JLabel title;gt
+    private JLabel title;
     private ImageIcon img3 = new ImageIcon(getClass().getResource("Title_pic.png"));
     private ImageIcon img1 = new ImageIcon(getClass().getResource("image_background.jpg"));
     private ImageIcon w1 = new ImageIcon(getClass().getResource("block1.png"));
@@ -97,28 +62,20 @@ class pane extends JPanel{
     private JLabel t1 = new JLabel(w1);
     private JLabel t2 = new JLabel(w2);
     private JLabel t3 = new JLabel(w3);
-    //private ImageIcon back_image= new ImageIcon(getClass().getResource("image_background.jpg"));
-//    Image background =Toolkit.getDefaultToolkit().createImage("image_background.jpg");
-//    drawImage(background,0,0,null);
+
+    ImageIcon i = new ImageIcon(getClass().getResource("icon.jpg"));
+    JLabel developer=new JLabel(i);
+
+
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
-        //Image background =Toolkit.getDefaultToolkit().createImage("image_background.jpg");
-        //g.drawImage(background,0,0,this);
-        //setBackground(Color.blue);
-        //setContentPane(new JLabel(back_image));
-
-//        img1 = new ImageIcon(getClass().getResource("body_pic.png"));
-//        img3 = new ImageIcon(getClass().getResource("Title_pic.png"));
-//        drawImage(background,0,0,null);
 
         int width=getWidth();
         int height=getHeight();
-//        difficulty.setFont(new Font ("Garamond", BOLD,10));
-//        difficulty.setForeground(Color.BLACK);
-//        remove(difficulty);
-//        add(difficulty);
-//        difficulty.setBounds(width/2,height*4/5,600,40);
-//        difficulty.setFont(new Font("Arial", BOLD ,30));
+
+        remove(developer);
+        add(developer);
+        developer.setBounds(0,0,50,50);
 
         remove(pic2);
         add(pic2);
@@ -140,29 +97,9 @@ class pane extends JPanel{
         add(pic1);
         pic1.setBounds(0,0,width,height);
 
-
-//        remove(diff);
-//        add(diff);
-//        int width1=getWidth();
-//        int height1=getHeight();
-//        diff.setBounds(width1/2,height1/2,60,50);
-//        //difficulty.setFont(Font.getFont(Ar));
-
     }
     pane(){
-//        start.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                SimpleDateFormat t = new SimpleDateFormat("HH:mm:ss");
-//                Date date1 = new Date();
-//                System.out.println(t.format(date1));
-//                String str1 = t.format(date1);
-//                String choice = diff.getSelectedItem().toString();
-//                setVisible(false);
-//                mainFrame frame=new mainFrame(choice,str1);
-//            }
-//        });
-
+//
         t1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -193,6 +130,16 @@ class pane extends JPanel{
                 mainFrame frame=new mainFrame("Hard",str1);
             }
         });
+
+        developer.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new develop();
+
+            }
+
+        });
+
     }
 
 }
