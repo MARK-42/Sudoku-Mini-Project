@@ -1,3 +1,6 @@
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -49,7 +52,7 @@ public class PlayingGame {
                 grid[i][j].addKeyListener(new KeyListener() {
                     @Override
                     public void keyTyped(KeyEvent e) {
-
+                        clickSoundSetter("sound.wav");
                     }
 
                     @Override
@@ -596,6 +599,21 @@ public class PlayingGame {
                 System.out.print(""+sudokuBoxArray[i][j]+" ");
             System.out.println("\n");
         }
+    }
+
+    public static synchronized void clickSoundSetter(final String url) {
+        new Thread(new Runnable() { // the wrapper thread is unnecessary, unless it blocks on the Clip finishing, see comments
+            public void run() {
+                try {
+                    Clip clip = AudioSystem.getClip();
+                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(Main.class.getResourceAsStream( url));
+                    clip.open(inputStream);
+                    clip.start();
+                } catch (Exception e) {
+                    System.err.println(e.getMessage());
+                }
+            }
+        }).start();
     }
 
 }
