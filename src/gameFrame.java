@@ -5,8 +5,9 @@ import java.awt.event.*;
 class mainFrame extends JFrame
 {
     static JLabel q;
+    private JLabel pic2;
     static String timeslice;
-    private ImageIcon img4;
+    private ImageIcon img2;
     mainFrame(String choice,String
             timeslice)
     {
@@ -17,6 +18,9 @@ class mainFrame extends JFrame
         Dimension d=Toolkit.getDefaultToolkit().getScreenSize();
         gameFrame.setBounds(0, 0, d.width, d.height);
         gameFrame.setVisible(true);
+        pic2 = new JLabel(img2);
+        img2 = new ImageIcon(getClass().getResource("image_background.jpg"));
+        gameFrame.setContentPane(new JLabel(img2));
         gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Container c=gameFrame.getContentPane();
         JTextField grid[][] = new JTextField[9][9];
@@ -42,6 +46,7 @@ class mainFrame extends JFrame
 
         pg.addUserInputToSudokuArray();
         JButton newgame=new JButton("NewGame");
+
         newgame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -64,17 +69,18 @@ class mainFrame extends JFrame
                 }
             }
         });
-        newgame.setBounds(45,500,120,50);
+        newgame.setBounds(435,800,280,50);
         gameFrame.add(newgame);
-        solution.setBounds(235,500,120,50);
+        solution.setBounds(810,800,300,50);
         gameFrame.add(solution);
-        exit.setBounds(420,500,120,50);
+        exit.setBounds(1200,800,200,50);
         gameFrame.add(exit);
         JLabel invalid=new JLabel("Invalid Input");
         invalid.setBounds(225,450,200,50);
         Font f=new Font("Arial",Font.BOLD,25);
         invalid.setFont(f);
-        Font f1=new Font("Arial",Font.BOLD,14);
+        Font f2=new Font("Arial",Font.BOLD,30);
+        Font f1=new Font("Arial",Font.BOLD,40);
         newgame.setFont(f1);
         solution.setFont(f1);
         exit.setFont(f1);
@@ -82,8 +88,8 @@ class mainFrame extends JFrame
         gameFrame.add(invalid);
         invalid.setForeground(Color.RED);
         //c.setBackground(new Color(252, 236, 196));
-        q=new JLabel("                        The Game is on !!!");
-        q.setBounds(115,20,500,30);
+        q=new JLabel();
+        q.setBounds(400,30,1500,40);
 
 
 
@@ -110,7 +116,7 @@ class mainFrame extends JFrame
 
 
         });
-        rules.setBounds(550,500,50,50);
+        rules.setBounds(1550,800,50,50);
 
 
         c.add(rules);
@@ -126,13 +132,11 @@ class mainFrame extends JFrame
 
 
         });
-        hints.setBounds(500,0,100,50);
+        hints.setBounds(1500,50,250,80);
+        Font fup=new Font("Arial",Font.BOLD,24);
+        hints.setFont(fup);
         c.add(hints);
     }
-
-
-
-
 }
 
 class CreateGrid
@@ -144,7 +148,7 @@ class CreateGrid
             for(int j=0;j<9;j++)
             {
                 grid[i][j]=new JTextField();
-                grid[i][j].setBounds((105+(40*j)+2),(75+(40*i)+2),40,40);
+                grid[i][j].setBounds((640+(70*j)+2),(105+(70*i)+2),70,70);
                 c.add(grid[i][j]);
                 grid[i][j].setHorizontalAlignment(JTextField.CENTER);
 
