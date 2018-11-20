@@ -174,57 +174,93 @@ class CreateGrid
 
     }
 }
-class rules{
+class rules extends JPanel{
+    private ImageIcon img34;
+//    private JLabel pic1 = new JLabel(img1);
+
     rules()
     {
         JFrame f = new JFrame("Rules");
-        JPanel p=new JPanel();
-        p.setLayout(new FlowLayout());
-        p.setBounds(300, 80, 600  , 600);
-        f.setBounds(400, 100, 600  , 400);
-        f.setVisible(true);
+        img34 = new ImageIcon(getClass().getResource("image_background.jpg"));
+//        f.setContentPane(new JLabel(img34));
+
+//        JPanel p=new JPanel();
+//        p.setLayout(new FlowLayout());
+//        p.setBounds(300, 80, 600  , 600);
+
+        //p.add(rulepage);
+
+//        pic1.setBounds(300,80,getWidth(),getHeight());
+//        f.add(pic1);
 
 
-
-        JLabel til=new JLabel("RULES-",JLabel.CENTER);
-
-        JLabel rulepage=new JLabel("<html>      <font color='red'>When you start a game of Sudoku, some blocks will be pre-filled for you.<br>You cannot change these numbers in the course of the game.<br> <br></font>" +
-                "            <font color='blue'>Each column must contain all of the numbers 1 through 9 and no two <br>numbers in the same column of a Sudoku puzzle can be the same.<br> <br> </font>"+
-                "            <font color='red'>Each row must contain all of the numbers 1 through 9 and no two  <br>numbers in the same row of a Sudoku puzzle can be the same. <br><br> </font>"+
-                "               <font color='blue'>Each block must contain all of the numbers 1 through 9 and no two <br>numbers in the same block of a Sudoku puzzle can be the same.<br><br> </font>"+
-                "               <font color='red'>Scoring is done on the basis of time consumed.<br> </font>"+
+//        JLabel til=new JLabel("RULES-",JLabel.CENTER);
+JLabel pic1=new JLabel(img34);
+pic1.setLayout(new FlowLayout());
+f.add(pic1);
+        JLabel rulepage=new JLabel("<html>      <font color='yellow'>When you start a game of Sudoku, some blocks will be pre-filled for you.<br>You cannot change these numbers in the course of the game.<br> <br></font>" +
+                "            <font color='white'>Each column must contain all of the numbers 1 through 9 and no two <br>numbers in the same column of a Sudoku puzzle can be the same.<br> <br> </font>"+
+                "            <font color='yellow'>Each row must contain all of the numbers 1 through 9 and no two  <br>numbers in the same row of a Sudoku puzzle can be the same. <br><br> </font>"+
+                "               <font color='white'>Each block must contain all of the numbers 1 through 9 and no two <br>numbers in the same block of a Sudoku puzzle can be the same.<br><br> </font>"+
+                "               <font color='yellow'>Scoring is done on the basis of time consumed.<br> </font>"+
                 "</html>"
                 ,JLabel.CENTER);
+        f.setBounds(400, 100, 600  , 400);
+        f.setVisible(true);
+        JLabel til=new JLabel("<html><font color='white'>RULES-</font></html>",JLabel.CENTER);
 
+        pic1.add(til);
 
+        pic1.add(rulepage);
 
-        f.setBackground(new Color(200, 236, 196));
+        //f.setBackground(new Color(200, 236, 196));
         Font f1=new Font("Arial",Font.BOLD,14);
         rulepage.setFont(f1);
         til.setFont(f1);
-        p.add(til);
-        p.add(rulepage);
 
-        f.add(p);
+
+
+
+        //f.add(p);
+
+
     }
 
+
 }
-class hints{
+class hints extends JPanel{
+    ImageIcon img34;
     hints()
     {
-        JFrame f = new JFrame("Hints");
-        JPanel p=new JPanel();
-        p.setLayout(new FlowLayout());
-        p.setBounds(300, 80, 600  , 600);
+        Frame f = new JFrame("Hints");
+        img34 = new ImageIcon(getClass().getResource("image_background.jpg"));
+//        f.setContentPane(new JLabel(img34));
+
+//        JPanel p=new JPanel();
+//        p.setLayout(new FlowLayout());
+//        p.setBounds(300, 80, 600  , 600);
+
+        //p.add(rulepage);
+
+//        pic1.setBounds(300,80,getWidth(),getHeight());
+//        f.add(pic1);
+
+
+//        JLabel til=new JLabel("RULES-",JLabel.CENTER);
+        JLabel pic1=new JLabel(img34);
+        pic1.setLayout(new FlowLayout());
+        f.add(pic1);
+
+
         f.setBounds(400, 100, 600  , 400);
         f.setVisible(true);
-        JLabel til=new JLabel("HINTS-",JLabel.CENTER);
+        JLabel til=new JLabel("<html><font color='yellow'>HINTS-</font></html>",JLabel.CENTER);
 
-        JLabel rulepage=new JLabel("<html>      <font color='green'>Start by first looking for a number that has the most \"givens\". <br> The more the merrier.<br> <br></font>" +
-                "            <font color='blue'>Start with a block and find missing numbers, then cross out all columns ,<br> and rows having that missing number.<br> <br> </font>"+
-                "            <font color='green'>Sudoku pencilmarking is a systematic process writing small <br> numbers inside the squares to denote which ones may fit in. <br><br> </font>"+
-                "               <font color='blue'> After pencilmarking the puzzle, the solver must analyze the results,<br> identify special number combinations and deduce which numbers should<br> be placed where.<br><br> </font>"+
-                "               <font color='green'>The easiest way starting a Sudoku puzzle is to scan rows and columns<br> within each triple-box area, eliminating numbers or squares and finding<br> situations where only a single number can fit into a single square.<br> </font>"+
+        JLabel rulepage=new JLabel("<html>      <font color='white'>Start by first looking for a number that has the most \"givens\". <br> The more the merrier.<br> <br></font>" +
+                "            <font color='yellow'>Start with a block and find missing numbers, then cross out all columns ,<br> and rows having that missing number.<br> <br> </font>"+
+                "            <font color='white'>Sudoku pencilmarking is a systematic process writing small <br> numbers inside the squares to denote which ones may fit in. <br><br> </font>"+
+                "               <font color='yellow'> After pencilmarking the puzzle, the solver must analyze the results,<br> identify special number combinations and deduce which numbers should<br> be placed where.<br><br> </font>"+
+                "               <font color='white'>The easiest way starting a Sudoku puzzle is to scan rows and columns<br> within each triple-box area, eliminating numbers or squares and finding<br> situations where only a single number can fit into a single square.<br> </font>"+
                 "</html>"
                 ,JLabel.CENTER);
 
@@ -233,10 +269,10 @@ class hints{
         Font f1=new Font("Arial",Font.BOLD,14);
         rulepage.setFont(f1);
         til.setFont(f1);
-        p.add(til);
-        p.add(rulepage);
+        pic1.add(til);
+        pic1.add(rulepage);
 
-        f.add(p);
+
     }
 
 }
