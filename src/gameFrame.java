@@ -120,7 +120,8 @@ class mainFrame extends JFrame
 
 
         c.add(rules);
-        JLabel hints=new JLabel("Click for Hints");
+        JLabel hints=new JLabel("<html><font color='white'>Click for Hints</font>");
+        hints.setFont(new Font("Arial",Font.BOLD,20));
         hints.addMouseListener(new MouseAdapter() {
             @Override
 
@@ -202,6 +203,12 @@ class rules extends JPanel{
 JLabel pic1=new JLabel(img34);
 pic1.setLayout(new FlowLayout());
 f.add(pic1);
+
+        JLabel til=new JLabel("<html><font color='White'>Rules-</font></html>",JLabel.CENTER);
+        Font fs=new Font("Arial",Font.BOLD,20);
+        pic1.add(til);
+        til.setFont(fs);
+
         JLabel rulepage=new JLabel("<html>      <font color='yellow'>When you start a game of Sudoku, some blocks will be pre-filled for you.<br>You cannot change these numbers in the course of the game.<br> <br></font>" +
                 "            <font color='white'>Each column must contain all of the numbers 1 through 9 and no two <br>numbers in the same column of a Sudoku puzzle can be the same.<br> <br> </font>"+
                 "            <font color='yellow'>Each row must contain all of the numbers 1 through 9 and no two  <br>numbers in the same row of a Sudoku puzzle can be the same. <br><br> </font>"+
@@ -211,9 +218,6 @@ f.add(pic1);
                 ,JLabel.CENTER);
         f.setBounds(400, 100, 600  , 400);
         f.setVisible(true);
-        JLabel til=new JLabel("<html><font color='white'>RULES-</font></html>",JLabel.CENTER);
-
-        pic1.add(til);
 
         pic1.add(rulepage);
 
@@ -258,7 +262,11 @@ class hints extends JPanel{
 
         f.setBounds(400, 100, 600  , 400);
         f.setVisible(true);
-        JLabel til=new JLabel("<html><font color='yellow'>HINTS-</font></html>",JLabel.CENTER);
+
+        JLabel til=new JLabel("<html><font color='White'>Hint-</font></html>",JLabel.CENTER);
+        Font fs=new Font("Arial",Font.BOLD,20);
+        pic1.add(til);
+        til.setFont(fs);
 
         JLabel rulepage=new JLabel("<html>      <font color='white'>Start by first looking for a number that has the most \"givens\". <br> The more the merrier.<br> <br></font>" +
                 "            <font color='yellow'>Start with a block and find missing numbers, then cross out all columns ,<br> and rows having that missing number.<br> <br> </font>"+
@@ -272,8 +280,6 @@ class hints extends JPanel{
         //f.setBackground(new Color(200, 150, 196));
         Font f1=new Font("Arial",Font.BOLD,14);
         rulepage.setFont(f1);
-        til.setFont(f1);
-        pic1.add(til);
         pic1.add(rulepage);
 
 

@@ -25,24 +25,48 @@ public class LandingPage extends JFrame {
 }
 
 class develop extends JFrame{
-    JLabel til = new JLabel("Anshul Agarwal");
-    JLabel t = new JLabel("<html>           <font color='white'>This Sudoku game has been developed as a part of OOM Mini-Project<br>      by our team comprising of 6 members under<br>       the supervision of Dr  R. Kala and Dr O.P. Vyas  <br></font>" +
-                       "            <font color='yellow'>   Ritik Raj   IIM20170039<br> </font>"+
-                       "            <font color='white'>   Arya Krishnan ICM2017501<br> </font>"+
-                       "               <font color='yellow'>   Anshul Agarwal IWM2017008<br> </font>"+
-                       "               <font color='white'>   Harsh Aryan ITM2017003<br> </font>"+
-                       "               <font color='yellow'>   Ritesh Yadav IRM2017001<br> </font>"+
-                       "               <font color='white'>   Bineet Kumar ISM2017008<br> </font>"+
-            "</html>"
-                       ,JLabel.CENTER);
+    private ImageIcon img;
 
     develop()
     {
-        super("Developer Page");
-        add(til);
-        add(t);
-        setBounds(400,100,600,400);
-        setVisible(true);
+        Frame f = new JFrame("Developers");
+        img = new ImageIcon(getClass().getResource("image_background.jpg"));
+
+        JLabel pic1=new JLabel(img);
+        pic1.setLayout(new FlowLayout());
+        f.add(pic1);
+
+
+        f.setBounds(455, 227, 600  , 400);
+        f.setVisible(true);
+        JLabel til=new JLabel("<html><font color='White'>Developers-</font></html>",JLabel.CENTER);
+        Font fs=new Font("Arial",Font.BOLD,20);
+        pic1.add(til);
+        til.setFont(fs);
+        JLabel t = new JLabel("<html>    <font color='yellow'>  <br> </font>" +
+                "            <font color='yellow'>  <br> </font>"+
+                "<font color='white'>This Sudoku game has been developed as a part of OOM Mini-Project<br>      by our team comprising of 6 members under<br>       the supervision of Dr  R. Kala and Dr O.P. Vyas  <br></font>" +
+                "            <font color='yellow'>  <br> </font>"+
+                "            <font color='yellow'>   Ritik Raj   IIM20170039<br> </font>"+
+                "            <font color='yellow'>   <br> </font>"+
+                "            <font color='white'>   Arya Krishnan ICM2017501<br> </font>"+
+                "            <font color='yellow'>  <br> </font>"+
+                "               <font color='yellow'>   Anshul Agarwal IWM2017008<br> </font>"+
+                "            <font color='yellow'>   <br> </font>"+
+                "               <font color='white'>   Harsh Aryan ITM2017003<br> </font>"+
+                "            <font color='yellow'>  <br> </font>"+
+                "               <font color='yellow'>   Ritesh Yadav IRM2017001<br> </font>"+
+                "            <font color='yellow'>   <br> </font>"+
+                "               <font color='white'>   Bineet Kumar ISM2017008<br> </font>"+
+                "</html>"
+                ,JLabel.CENTER);
+
+
+        Font f1=new Font("Arial",Font.BOLD,14);
+        //
+        t.setFont(f1);
+        pic1.add(t);
+        //
     }
 }
 
