@@ -1,3 +1,6 @@
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -6,7 +9,7 @@ import java.text.SimpleDateFormat;
 
 public class PlayingGame {
     private int playingDuration;//check datatype before use
-    private int numBlocksFilled=0;
+    static int numBlocksFilled=0;
     static JTextField grid [][];
     static int sudokuBoxArray[][];
     static int sudokuBoxArrCopy[][];
@@ -49,7 +52,7 @@ public class PlayingGame {
                 grid[i][j].addKeyListener(new KeyListener() {
                     @Override
                     public void keyTyped(KeyEvent e) {
-
+                        clickSoundSetter("sound.wav");
                     }
 
                     @Override
@@ -59,13 +62,23 @@ public class PlayingGame {
 
                     @Override
                     public void keyReleased(KeyEvent e) {
-                        if(!(grid[i_curr][j_curr].getText().equals(""))) {
-                            sudokuBoxArray[i_curr][j_curr] = Integer.parseInt(grid[i_curr][j_curr].getText());
+                        try {
+                            if (!(grid[i_curr][j_curr].getText().equals(""))) {
+                                sudokuBoxArray[i_curr][j_curr] = Integer.parseInt(grid[i_curr][j_curr].getText());
+                            } else if (grid[i_curr][j_curr].getText().equals("")) {
+                                sudokuBoxArray[i_curr][j_curr] = 0;
+                            }
                         }
-                        checkCollisionForInput(i_curr,j_curr,sudokuBoxArray[i_curr][j_curr]);
-                        if(checkIntervalForTheInput(Integer.parseInt(grid[i_curr][j_curr].getText()))==false){
+                        catch (NumberFormatException e1){
                             grid[i_curr][j_curr].setBackground(Color.RED);
                         }
+//                        if(Character.isLetter(grid[i_curr][j_curr].getText().charAt(0))){
+//                        }
+                        checkCollisionForInput(i_curr,j_curr,sudokuBoxArray[i_curr][j_curr]);
+                        if(!checkIntervalForTheInput(Integer.parseInt(grid[i_curr][j_curr].getText()))){
+                            grid[i_curr][j_curr].setBackground(Color.RED);
+                        }
+
 
                     }
                 });
@@ -101,12 +114,7 @@ public class PlayingGame {
                     if(sudokuBoxArray[w][y]==element && (!(w==i && y==j))) {
                         grid[i][j].setBackground(Color.RED);
                         flagMiniBox=1;
-//                        for(int icount=0;icount<9;icount++)
-//                            for(int jcount=0;jcount<9;jcount++)
-//                            {
-//                                if((icount!=i)||(jcount!=j))
-//                                    grid[icount][jcount].setEditable(false);
-//                            }
+
                     }
 //                    else if(sudokuBoxArray[w][y]==element && ((w==i && y==j)))
 //                        grid[i][j].setBackground(Color.LIGHT_GRAY);
@@ -282,61 +290,61 @@ public class PlayingGame {
         }
         if (flagRowCol==0 && flagMiniBox==0) {
             grid[i][j].setBackground(Color.LIGHT_GRAY);
-
+        }
 //            numBlocksFilled=numBlocksFilled+1;
-            if(checkAllAreFilled())
-            {
-                SimpleDateFormat t = new SimpleDateFormat("HH:mm:ss");
-                Date date2 = new Date();
-                System.out.println(t.format(date2));
-                String str2 = t.format(date2);
+        if(checkAllAreFilled())
+        {
+            SimpleDateFormat t = new SimpleDateFormat("HH:mm:ss");
+            Date date2 = new Date();
+            System.out.println(t.format(date2));
+            String str2 = t.format(date2);
 
-                String[] arr2 = str2.split(":");
-                String str1 = mainFrame.timeslice;
-                String[] arr1 = str1.split(":");
-                int a1= (Integer.parseInt(arr1[0]));
-                int b1= (Integer.parseInt(arr1[1]));
-                int c1= (Integer.parseInt(arr1[2]));
-                int result1_sec= (a1*(60*60))+(b1*60)+(c1);
+            String[] arr2 = str2.split(":");
+            String str1 = mainFrame.timeslice;
+            String[] arr1 = str1.split(":");
+            int a1= (Integer.parseInt(arr1[0]));
+            int b1= (Integer.parseInt(arr1[1]));
+            int c1= (Integer.parseInt(arr1[2]));
+            int result1_sec= (a1*(60*60))+(b1*60)+(c1);
 
-                int a2= (Integer.parseInt(arr2[0]));
-                int b2= (Integer.parseInt(arr2[1]));
-                int c2= (Integer.parseInt(arr2[2]));
-                int result2_sec= (a2*(60*60))+(b2*60)+(c2);
+            int a2= (Integer.parseInt(arr2[0]));
+            int b2= (Integer.parseInt(arr2[1]));
+            int c2= (Integer.parseInt(arr2[2]));
+            int result2_sec= (a2*(60*60))+(b2*60)+(c2);
 
-                int final_sec=result2_sec-result1_sec;
+            int final_sec=result2_sec-result1_sec;
 
-                hr = final_sec/(60*60);
-                final_sec=final_sec-(hr*(60*60));
-                min = final_sec/60;
-                final_sec=final_sec-(min*60);
-                sec = final_sec;
+            hr = final_sec/(60*60);
+            final_sec=final_sec-(hr*(60*60));
+            min = final_sec/60;
+            final_sec=final_sec-(min*60);
+            sec = final_sec;
 
 
                 /*for (int i = 0; i < 3; i++) {
                     System.out.println(arr2[i]);
                 }*/
-                //insert new congratulations box frame here
+            //insert new congratulations box frame here
 
-                //comment down the line below when point above done.
+            //comment down the line below when point above done.
 //                JOptionPane.showMessageDialog(mainFrame.class,"Eggs are not supposed to be green.","Inane custom dialog",JOptionPane.INFORMATION_MESSAGE,JOptionPane.PLAIN_MESSAGE);
-                JOptionPane.showMessageDialog(new JFrame(),"<html>CONGRAGULATIONS!!! You Won!<br> your timing is: "+Integer.toString(hr)+" : "+Integer.toString(min)+" : "+Integer.toString(sec)+"</html>","You Won!",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(new JFrame(),"<html>CONGRAGULATIONS!!! You Won!<br> your timing is: "+Integer.toString(hr)+" : "+Integer.toString(min)+" : "+Integer.toString(sec)+"</html>","You Won!",JOptionPane.INFORMATION_MESSAGE);
 
-                //mainFrame.q.setText("          YOU WON!!!"+ hr +" "+min+" "+sec);
+            //mainFrame.q.setText("          YOU WON!!!"+ hr +" "+min+" "+sec);
 
-            }
-            for(int icount=0;icount<9;icount++)
-                for(int jcount=0;jcount<9;jcount++)
-                {
-                    grid[icount][jcount].setEditable(true);
-                }
-            for(int icount=0;icount<9;icount++)
-                for(int jcount=0;jcount<9;jcount++)
-                {
-                    if(sudokuBoxArrCopy[icount][jcount]!=0)
-                        grid[icount][jcount].setEditable(false);
-                }
         }
+//            for(int icount=0;icount<9;icount++)
+//                for(int jcount=0;jcount<9;jcount++)
+//                {
+//                    grid[icount][jcount].setEditable(true);
+//                }
+//            for(int icount=0;icount<9;icount++)
+//                for(int jcount=0;jcount<9;jcount++)
+//                {
+//                    if(sudokuBoxArrCopy[icount][jcount]!=0)
+//                        grid[icount][jcount].setEditable(false);
+//                }
+
 
 
     }
@@ -353,7 +361,7 @@ public class PlayingGame {
         Algo sa1=new Algo(sudokuBoxArray);
         if(sa1.getk()==0)
             q.setText("No valid solution available!!");
-         else {
+        else {
             tempArr = sa1.getGrid();
             for (int w = 0; w < 9; w++) {
                 for (int y = 0; y < 9; y++) {
@@ -366,6 +374,7 @@ public class PlayingGame {
 
     public boolean checkIntervalForTheInput(int t)
     {
+        System.out.println(t);
         if(t>0&&t<=9)
             return true;
         else return false;
@@ -516,13 +525,14 @@ public class PlayingGame {
 
     public boolean checkAllAreFilled()
     {
+        numBlocksFilled=0;
         for(int w=0;w<9;w++) {
             for(int y=0;y<9;y++) {
-                if(sudokuBoxArray[w][y]!=0)
+                if(sudokuBoxArray[w][y]>0 && sudokuBoxArray[w][y]<=9)
                     numBlocksFilled++;
             }
         }
-        if(numBlocksFilled==81)
+        if(numBlocksFilled>=81)
             return true;
         else
             return false;
@@ -553,7 +563,7 @@ public class PlayingGame {
             if(j==6||j==7||j==8)
                 return 9;
         }
-            return 0;
+        return 0;
 
     }
 
@@ -589,6 +599,21 @@ public class PlayingGame {
                 System.out.print(""+sudokuBoxArray[i][j]+" ");
             System.out.println("\n");
         }
+    }
+
+    public static synchronized void clickSoundSetter(final String url) {
+        new Thread(new Runnable() { // the wrapper thread is unnecessary, unless it blocks on the Clip finishing, see comments
+            public void run() {
+                try {
+                    Clip clip = AudioSystem.getClip();
+                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(Main.class.getResourceAsStream( url));
+                    clip.open(inputStream);
+                    clip.start();
+                } catch (Exception e) {
+                    System.err.println(e.getMessage());
+                }
+            }
+        }).start();
     }
 
 }
