@@ -84,7 +84,7 @@ class pane extends JPanel{
     private JButton start= new JButton("Go");;
     private JLabel difficulty = new JLabel("Difficulty:");
     private JComboBox diff = new JComboBox(levels);
-    private JLabel title;
+    private JLabel title;gt
     private ImageIcon img3 = new ImageIcon(getClass().getResource("Title_pic.png"));
     private ImageIcon img1 = new ImageIcon(getClass().getResource("image_background.jpg"));
     private ImageIcon w1 = new ImageIcon(getClass().getResource("block1.png"));
