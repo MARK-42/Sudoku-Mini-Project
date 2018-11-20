@@ -59,15 +59,18 @@ public class PlayingGame {
 
                     @Override
                     public void keyReleased(KeyEvent e) {
-                        if(Character.isLetter(grid[i_curr][j_curr].getText().charAt(0))){
+                        try {
+                            if (!(grid[i_curr][j_curr].getText().equals(""))) {
+                                sudokuBoxArray[i_curr][j_curr] = Integer.parseInt(grid[i_curr][j_curr].getText());
+                            } else if (grid[i_curr][j_curr].getText().equals("")) {
+                                sudokuBoxArray[i_curr][j_curr] = 0;
+                            }
+                        }
+                        catch (NumberFormatException e1){
                             grid[i_curr][j_curr].setBackground(Color.RED);
                         }
-                        if(!(grid[i_curr][j_curr].getText().equals(""))) {
-                            sudokuBoxArray[i_curr][j_curr] = Integer.parseInt(grid[i_curr][j_curr].getText());
-                        }
-                        else if(grid[i_curr][j_curr].getText().equals("")){
-                            sudokuBoxArray[i_curr][j_curr] =0;
-                        }
+//                        if(Character.isLetter(grid[i_curr][j_curr].getText().charAt(0))){
+//                        }
                         checkCollisionForInput(i_curr,j_curr,sudokuBoxArray[i_curr][j_curr]);
                         if(!checkIntervalForTheInput(Integer.parseInt(grid[i_curr][j_curr].getText()))){
                             grid[i_curr][j_curr].setBackground(Color.RED);
@@ -286,47 +289,47 @@ public class PlayingGame {
             grid[i][j].setBackground(Color.LIGHT_GRAY);
         }
 //            numBlocksFilled=numBlocksFilled+1;
-            if(checkAllAreFilled())
-            {
-                SimpleDateFormat t = new SimpleDateFormat("HH:mm:ss");
-                Date date2 = new Date();
-                System.out.println(t.format(date2));
-                String str2 = t.format(date2);
+        if(checkAllAreFilled())
+        {
+            SimpleDateFormat t = new SimpleDateFormat("HH:mm:ss");
+            Date date2 = new Date();
+            System.out.println(t.format(date2));
+            String str2 = t.format(date2);
 
-                String[] arr2 = str2.split(":");
-                String str1 = mainFrame.timeslice;
-                String[] arr1 = str1.split(":");
-                int a1= (Integer.parseInt(arr1[0]));
-                int b1= (Integer.parseInt(arr1[1]));
-                int c1= (Integer.parseInt(arr1[2]));
-                int result1_sec= (a1*(60*60))+(b1*60)+(c1);
+            String[] arr2 = str2.split(":");
+            String str1 = mainFrame.timeslice;
+            String[] arr1 = str1.split(":");
+            int a1= (Integer.parseInt(arr1[0]));
+            int b1= (Integer.parseInt(arr1[1]));
+            int c1= (Integer.parseInt(arr1[2]));
+            int result1_sec= (a1*(60*60))+(b1*60)+(c1);
 
-                int a2= (Integer.parseInt(arr2[0]));
-                int b2= (Integer.parseInt(arr2[1]));
-                int c2= (Integer.parseInt(arr2[2]));
-                int result2_sec= (a2*(60*60))+(b2*60)+(c2);
+            int a2= (Integer.parseInt(arr2[0]));
+            int b2= (Integer.parseInt(arr2[1]));
+            int c2= (Integer.parseInt(arr2[2]));
+            int result2_sec= (a2*(60*60))+(b2*60)+(c2);
 
-                int final_sec=result2_sec-result1_sec;
+            int final_sec=result2_sec-result1_sec;
 
-                hr = final_sec/(60*60);
-                final_sec=final_sec-(hr*(60*60));
-                min = final_sec/60;
-                final_sec=final_sec-(min*60);
-                sec = final_sec;
+            hr = final_sec/(60*60);
+            final_sec=final_sec-(hr*(60*60));
+            min = final_sec/60;
+            final_sec=final_sec-(min*60);
+            sec = final_sec;
 
 
                 /*for (int i = 0; i < 3; i++) {
                     System.out.println(arr2[i]);
                 }*/
-                //insert new congratulations box frame here
+            //insert new congratulations box frame here
 
-                //comment down the line below when point above done.
+            //comment down the line below when point above done.
 //                JOptionPane.showMessageDialog(mainFrame.class,"Eggs are not supposed to be green.","Inane custom dialog",JOptionPane.INFORMATION_MESSAGE,JOptionPane.PLAIN_MESSAGE);
-                JOptionPane.showMessageDialog(new JFrame(),"<html>CONGRAGULATIONS!!! You Won!<br> your timing is: "+Integer.toString(hr)+" : "+Integer.toString(min)+" : "+Integer.toString(sec)+"</html>","You Won!",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(new JFrame(),"<html>CONGRAGULATIONS!!! You Won!<br> your timing is: "+Integer.toString(hr)+" : "+Integer.toString(min)+" : "+Integer.toString(sec)+"</html>","You Won!",JOptionPane.INFORMATION_MESSAGE);
 
-                //mainFrame.q.setText("          YOU WON!!!"+ hr +" "+min+" "+sec);
+            //mainFrame.q.setText("          YOU WON!!!"+ hr +" "+min+" "+sec);
 
-            }
+        }
 //            for(int icount=0;icount<9;icount++)
 //                for(int jcount=0;jcount<9;jcount++)
 //                {
@@ -355,7 +358,7 @@ public class PlayingGame {
         Algo sa1=new Algo(sudokuBoxArray);
         if(sa1.getk()==0)
             q.setText("No valid solution available!!");
-         else {
+        else {
             tempArr = sa1.getGrid();
             for (int w = 0; w < 9; w++) {
                 for (int y = 0; y < 9; y++) {
@@ -557,7 +560,7 @@ public class PlayingGame {
             if(j==6||j==7||j==8)
                 return 9;
         }
-            return 0;
+        return 0;
 
     }
 
