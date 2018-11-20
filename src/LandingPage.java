@@ -37,7 +37,7 @@ class develop extends JFrame{
         f.add(pic1);
 
 
-        f.setBounds(455, 227, 600  , 400);
+        f.setBounds(570, 328, 800  , 450);
         f.setVisible(true);
         JLabel til=new JLabel("<html><font color='White'>Developers-</font></html>",JLabel.CENTER);
         Font fs=new Font("Arial",Font.BOLD,20);
@@ -45,19 +45,19 @@ class develop extends JFrame{
         til.setFont(fs);
         JLabel t = new JLabel("<html>    <font color='yellow'>  <br> </font>" +
                 "            <font color='yellow'>  <br> </font>"+
-                "<font color='white'>This Sudoku game has been developed as a part of OOM Mini-Project<br>      by our team comprising of 6 members under<br>       the supervision of Dr  R. Kala and Dr O.P. Vyas  <br></font>" +
+                "<font color='white'><font size='5'>This Sudoku game has been developed as a part of OOM Mini-Project<br>      by our team comprising of 6 members under<br>       the supervision of Dr  R. Kala and Dr O.P. Vyas  <br></font></font>" +
                 "            <font color='yellow'>  <br> </font>"+
-                "            <font color='yellow'>   Ritik Raj   IIM20170039<br> </font>"+
+                "            <font color='yellow'> <font size='5'>  Ritik Raj   IIM20170039<br> </font></font>"+
                 "            <font color='yellow'>   <br> </font>"+
-                "            <font color='white'>   Arya Krishnan ICM2017501<br> </font>"+
+                "            <font color='white'> <font size='5'>  Arya Krishnan ICM2017501<br></font> </font>"+
                 "            <font color='yellow'>  <br> </font>"+
-                "               <font color='yellow'>   Anshul Agarwal IWM2017008<br> </font>"+
+                "               <font color='yellow'> <font size='5'>  Anshul Agarwal IWM2017008<br> </font></font>"+
                 "            <font color='yellow'>   <br> </font>"+
-                "               <font color='white'>   Harsh Aryan ITM2017003<br> </font>"+
+                "               <font color='white'> <font size='5'>  Harsh Aryan ITM2017003<br></font> </font>"+
                 "            <font color='yellow'>  <br> </font>"+
-                "               <font color='yellow'>   Ritesh Yadav IRM2017001<br> </font>"+
+                "               <font color='yellow'> <font size='5'>  Ritesh Yadav IRM2017001<br> </font></font>"+
                 "            <font color='yellow'>   <br> </font>"+
-                "               <font color='white'>   Bineet Kumar ISM2017008<br> </font>"+
+                "               <font color='white'> <font size='5'>  Bineet Kumar ISM2017008<br></font> </font>"+
                 "</html>"
                 ,JLabel.CENTER);
 
@@ -89,7 +89,7 @@ class pane extends JPanel{
     private JLabel t2 = new JLabel(w2);
     private JLabel t3 = new JLabel(w3);
 
-    ImageIcon i = new ImageIcon(getClass().getResource("icon.jpg"));
+    ImageIcon i = new ImageIcon(getClass().getResource("i.png"));
     JLabel developer=new JLabel(i);
 
 
@@ -105,7 +105,7 @@ class pane extends JPanel{
 
         remove(pic2);
         add(pic2);
-        pic2.setBounds(width*4/13,0,600,400);
+        pic2.setBounds(width*8/24,0,600,400);
 
         remove(t1);
         add(t1);
