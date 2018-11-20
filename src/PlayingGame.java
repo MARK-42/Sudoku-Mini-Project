@@ -59,6 +59,9 @@ public class PlayingGame {
 
                     @Override
                     public void keyReleased(KeyEvent e) {
+                        if(Character.isLetter(grid[i_curr][j_curr].getText().charAt(0))){
+                            grid[i_curr][j_curr].setBackground(Color.RED);
+                        }
                         if(!(grid[i_curr][j_curr].getText().equals(""))) {
                             sudokuBoxArray[i_curr][j_curr] = Integer.parseInt(grid[i_curr][j_curr].getText());
                         }
@@ -69,6 +72,7 @@ public class PlayingGame {
                         if(!checkIntervalForTheInput(Integer.parseInt(grid[i_curr][j_curr].getText()))){
                             grid[i_curr][j_curr].setBackground(Color.RED);
                         }
+
 
                     }
                 });
@@ -364,6 +368,7 @@ public class PlayingGame {
 
     public boolean checkIntervalForTheInput(int t)
     {
+        System.out.println(t);
         if(t>0&&t<=9)
             return true;
         else return false;
