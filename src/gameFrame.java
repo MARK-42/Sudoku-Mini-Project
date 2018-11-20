@@ -45,7 +45,7 @@ class mainFrame extends JFrame
         }
 
         pg.addUserInputToSudokuArray();
-        JButton newgame=new JButton("NewGame");
+        JButton newgame=new JButton("NEW GAME");
 
         newgame.addActionListener(new ActionListener() {
             @Override
@@ -69,7 +69,7 @@ class mainFrame extends JFrame
                 }
             }
         });
-        newgame.setBounds(435,800,280,50);
+        newgame.setBounds(410,800,304,50);
         gameFrame.add(newgame);
         solution.setBounds(810,800,300,50);
         gameFrame.add(solution);
