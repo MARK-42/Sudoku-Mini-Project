@@ -17,9 +17,14 @@ Java is used as a backend laguage, while Swing is used to create GUI of the proj
 ![](https://img.shields.io/badge/Language-Java-orange)
 ![](https://img.shields.io/badge/Language-Swing-blue)
 
+## User Interface 
+![](Images/Sudoku_image.jpeg)
+
+
 ## How to run
 
 1) Download the ZIP file from the repository.<br/>
 2) Extract the same to a destinated folder.<br/>
 3) Open the project folder using  Intellij IDE.<br/>
 4) Click on the green button on the upper right hand side of the screen.<br/>
+
